@@ -1,0 +1,10 @@
+{
+  user_id: transaction.user_id,
+  timestamp: transaction.timestamp,
+  from_address: transaction.from_address,
+  to_address: transaction.to_address,
+  second_to_address: transaction.second_to_address,
+  third_to_address: transaction.third_to_address,
+  amount: transaction.amount
+
+}
