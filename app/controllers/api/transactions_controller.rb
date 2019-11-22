@@ -6,7 +6,9 @@ class Api::TransactionsController < ApplicationController
   end
   
   def create
-    @transaction = Transaction.new(
+    amount = params[:amount]
+
+    @transaction = Transaction.create(
                                     user_id: params[:user_id],
                                     timestamp: params[:timestamp],
                                     from_address: params[:from_address],

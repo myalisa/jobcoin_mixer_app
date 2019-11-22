@@ -1,0 +1,7 @@
+{
+  amount: withdrawal.amount
+  user_id: withdrawal.user_id,
+  to_address: withdrawal.to_address
+  
+
+}

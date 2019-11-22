@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_21_184853) do
+ActiveRecord::Schema.define(version: 2019_11_21_233050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "transactions", force: :cascade do |t|
-    t.integer "user_id"
     t.string "timestamp"
     t.string "from_address"
     t.string "to_address"
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_184853) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "second_to_address"
     t.string "third_to_address"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 2019_11_21_184853) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_confirmation"
+  end
+
+  create_table "withdrawals", force: :cascade do |t|
+    t.integer "amount"
+    t.integer "user_id"
+    t.string "to_address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

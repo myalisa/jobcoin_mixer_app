@@ -1,15 +1,10 @@
 class Transaction < ApplicationRecord
-  belongs_to :user 
+  belongs_to :user
 
-
-  def mixer
-    old_ids = transactions.pluck(:user_id)
-    mixed_ids = {}
-
-
-    old_ids.each do |id|
-      
-    end
+  def house_sum
+    Transaction.sum(:amount) - Withdrawal.sum(:amount)
   end
-end
 
+
+
+end
